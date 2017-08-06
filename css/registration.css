@@ -1,0 +1,30 @@
+body{
+    background-color: currentColor;
+}
+#signup-form{
+    background-color: rgba(65, 94, 140,.2);
+    height: 300px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+#signup-form input{
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 5%;
+    margin-bottom: 6px;
+    padding: 5px;
+}
+#signup-form input.btn-signup{
+    width: 20%;
+    text-align: center;
+    margin-left: 40%;
+    background-color: greenyellow;
+    border: 0;
+    padding: 5px;
+    border-radius: 4px;
+}
+#signup-form input.btn-signup:hover{
+    background-color: gray;
+}

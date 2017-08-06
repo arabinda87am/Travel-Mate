@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Travel Made Easy</title>
+<link rel="stylesheet" href="css/registration.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="javascript/functions.js"></script>
+<div>
+    <div id="signup-form">
+        <form method="post" name="signup" action="registration.php" autocomplete="off">
+             <input type="text" name="mobile" id="mobile"  placeholder="Enter Your Mobile Number" maxlength="100" value="" required onchange="mobileNumber()" />
+           
+             <input type="text" name="email"  placeholder="Enter Your Email Id" maxlength="100" value="" required onchange="ValidateEmail(document.signup.email)" />
+            
+                <input type="password" name="pass" id="pass"  placeholder="Enter Password" maxlength="15" required="" onchange="CheckPassword(document.signup.pass)"/>
+             
+                <input type="password" name="cpass" id="cpass"  placeholder="Enter Confirm Password" maxlength="15" required onchange="checkPasswordMatch();"/>
+            
+             <input type="text" name="fname"  placeholder="Enter First Name" maxlength="100" value="" required/>
+             
+             <input type="text" name="lname"  placeholder="Enter Last Name" maxlength="100" value="" required/>
+             
+             <input type="text" name="address" placeholder="Enter Your Address" maxlength="200" value="" required/>
+             
+            <input type="submit" name="signup" class="btn-signup" value="Sign Up">
+           
+        </form>
+    </div> 
+</div>
+
+</body>
+</html>

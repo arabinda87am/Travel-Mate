@@ -1,0 +1,208 @@
+ html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(236, 181, 62, 0.95);
+      }
+#nav {
+    background-color: darkgreen;
+    height: 25px;
+    border-radius: 7px;
+}
+#header {
+    background-color: darkcyan;
+    height: 60px;
+    border-radius: 7px;
+}
+#nav ul.left {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: left;
+}
+#nav ul.right {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: right;
+}
+#nav li {
+    display: inline;
+    padding: 5px;
+    vertical-align: middle;
+    margin-left: 0px;
+}
+#nav li a {
+    text-decoration: none;
+    color: white;
+}
+#logo {
+    float: left;
+    max-height: 100%;
+    max-width: 150%;
+}
+#nav ul li a:hover {
+    background-color: cornsilk;
+    color: black;
+}
+#heading1 {
+    position: absolute;
+    margin-left: 20%;
+    font-family: 'Century Gothic', Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: deeppink;
+    padding: 20px;
+}
+#heading2 {
+    position: absolute;
+    margin-left: 60%;
+    font-family: tahoma;
+    font-style: italic;
+    font-size: 10px;
+    padding-top: 40px;
+    color: chartreuse;
+}
+div.result_train{
+    float: left;
+    max-width: 25%;
+    background-color: background;
+    margin-top: 5px;
+    padding: 10px;
+}
+div.train{
+    width: 90%;
+    margin-bottom: 5px;
+    margin-left: 3.5%;
+    padding: 5px;
+    background-color: red;
+}
+div.hotellist{
+    float:right;
+    width: 21%;
+    background-color: crimson;
+    margin:  5px;
+    margin-left: 1px;
+    padding: 2px;
+}
+div.hotellist ul li{
+    width: 90%;
+    list-style-type: none;
+   background-color: lightpink;
+   padding: 2px;
+   padding-right: 5px;
+   margin-bottom: 5px;
+   margin-right: 14%;
+   color: black;
+}
+div.hotellist ul li a{
+    text-decoration: none;
+    padding: 1px;
+}
+div.result_taxi{
+    float: left;
+    max-width: 25%;
+    background-color: background;
+    margin-top: 5px;
+    margin-right: 1px;
+    padding: 5px;
+}
+div.taxi{
+    width: 90%;
+    margin-bottom: 5px;
+    margin-left: 3.5%;
+    padding: 5px;
+    background-color: salmon;
+}
+div.result_private_car{
+    float: left;
+    max-width: 25%;
+    background-color: background;
+    margin-right: 1px;
+    margin-top: 5px;
+    padding: 5px;
+}
+div.private_car{
+    width: 90%;
+    margin-bottom: 5px;
+    margin-left: 3.5%;
+    padding: 5px;
+    background-color: salmon;
+}
+div.result_bus{
+    float: left;
+    max-width: 25%;
+    background-color: background;
+    margin-right: 1px;
+    margin-top: 5px;
+    padding: 5px;
+}
+div.bus{
+    width: 90%;
+    margin-bottom: 5px;
+    margin-left: 3.5%;
+    padding: 5px;
+    background-color: salmon;
+}
+#point_of_interest{
+    float: left;
+    max-width: 75%;
+    background-color: background;
+    margin-right: 1px;
+    margin-top: 5px;
+    padding: 5px;
+}
+.point_of_interest_heading{
+    text-align: center;
+    width: 90%;
+    padding: 1%;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#point_of_interest div.recalculate-box{
+    width:29%;
+    height: 200px;
+    float:left;
+    color: black;
+    background-color: red;
+    margin: 4px;
+    padding: 4px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+#point_of_interest label{
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+#point_of_interest input{
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+#point_of_interest img{
+    max-height: 100px;
+    max-width: 100px;
+    margin-left: auto;
+}
+#point_of_interest input.btn-recalculate{
+    width: 20%;
+    text-align: center;
+    margin-left: 40%;
+    background-color: greenyellow;
+    border: 0;
+    padding: 5px;
+    border-radius: 4px;
+}
+#point_of_interest input.btn-recalculate:hover{
+    background-color: gray;
+}
