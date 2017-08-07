@@ -1,6 +1,7 @@
 <?php
+    require "config/config.php";
 if(isset($_POST['submit'])){
-    $to = "arabinda87am@yahoo.com"; // this is your Email address
+    $to = $my_email; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -12,7 +13,7 @@ if(isset($_POST['submit'])){
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
     mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,"From:developer@travelmate.tk"); // sends a copy of the message to the sender
+    mail($from,$subject2,$message2,"From:developer@travelmate.tk"); // sends a copy of the message to the sender & enter your email address statically
     echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     }

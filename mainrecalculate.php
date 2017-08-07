@@ -1,10 +1,12 @@
+<?php require "config/dbconnect.php";?>
+<?php require "config/config.php";?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Travel made easy</title>
         <link type="text/css" rel="stylesheet" href="css/mainrecalculatepage.css">
-        
+
     </head>
     <body>
         <div id="header">
@@ -25,12 +27,6 @@
         </div>
         <?php
         session_start();
-        $con=mysqli_connect("localhost","id1778671_arabinda","Abcd@1234","id1778671_travelmate");
-        // Check connection
-        if (mysqli_connect_errno())
-        {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        }
         $origin = $_SESSION['destination'];
         $transit = $_SESSION['transit'];
         $i = $_SESSION['i'];
@@ -52,22 +48,22 @@
             for($j=0;$j<$i;$j++)
             {
                 $a = 'p'.$j;
-                $destination = filter_input(INPUT_GET, $a); 
+                $destination = filter_input(INPUT_GET, $a);
                 if($destination!="")
                 {
                     $destination= str_replace(", India", "", $destination);
                     $destination= str_replace(" ", "+", $destination);
                     $ch = curl_init();
-                    $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$origin.'&destinations='.$destination.'&mode=transit&transit_mode=train&key=AIzaSyCOys5USOaULjRiFWX_IrXxXb-FW83iAcw';
+                    $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$origin.'&destinations='.$destination.'&mode=transit&transit_mode=train&key='.$apikey5; //Put your api key here
                     curl_setopt($ch, CURLOPT_URL, $url);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                     curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        
-                    $json = curl_exec($ch); 
+
+                    $json = curl_exec($ch);
                     curl_close($ch);
-        
+
                     $json = json_decode($json, true);
                     $distance = $json['rows'][0]['elements'][0]['distance']['value'];
                     $distance = $distance/1000;
@@ -94,7 +90,7 @@
             echo '<a>Total Cost Will Be : '.$total_cost.' rupee</a>';
             echo '</div>';
         }
-        else 
+        else
         {
             $query = 'select * from car_fare';
             $sql_list = mysqli_query($con, $query);
@@ -117,7 +113,7 @@
                 </tr>
                 <?php
                 for($j=0;$j<$i;$j++)
-                {   
+                {
                     $a = 'p'.$j;
                     $destination = filter_input(INPUT_GET, $a);
                     if($destination!="")
@@ -125,17 +121,17 @@
                         $destination= str_replace(", India", "", $destination);
                         $destination= str_replace(" ", "+", $destination);
                         $ch = curl_init();
-                        $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$origin.'&destinations='.$destination.'&key=AIzaSyCIu3W2zzpLHuGYYnJUrSgcE62muAh6enw';
+                        $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$origin.'&destinations='.$destination.'&key='.$apikey6;//Put your api key here
                         curl_setopt($ch, CURLOPT_URL, $url);
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                         curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
                         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        
-                        $json = curl_exec($ch); 
-        
+
+                        $json = curl_exec($ch);
+
                         curl_close($ch);
-        
+
                         $json = json_decode($json, true);
                         $distance = $json['rows'][0]['elements'][0]['distance']['value'];
                         $distance = $distance/1000;

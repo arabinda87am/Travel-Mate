@@ -1,3 +1,4 @@
+<?php require "config/config.php";?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,16 +8,16 @@
     <link type="text/css" rel="stylesheet" href="css/nav.css">
   </head>
   <body>
-    <script type="text/javascript"> 
-        function stopRKey(evt) { 
-        var evt = (evt) ? evt : ((event) ? event : null); 
-        var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
-        if ((evt.keyCode === 13) && (node.type==="text"))  {return false;} 
+    <script type="text/javascript">
+        function stopRKey(evt) {
+        var evt = (evt) ? evt : ((event) ? event : null);
+        var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+        if ((evt.keyCode === 13) && (node.type==="text"))  {return false;}
         }
-    document.onkeypress = stopRKey; 
-    </script>  
+    document.onkeypress = stopRKey;
+    </script>
     <script type="text/javascript" src="javascript/autocomplete.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKZ6oi-h9vBRZJW1FBCk_pZYBYPH55n-M&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $apikey1; //Put your api key here?>&libraries=places&callback=initAutocomplete" async defer></script>
     <div id="header">
         <a href="index.php"><img id="logo" src="images/logo.png"></a>
         <a id="heading1">Travel Smart with Travel Friend.....</a>
